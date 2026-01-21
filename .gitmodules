@@ -7,3 +7,6 @@
 [submodule "microservices/algashop-billing"]
 	path = microservices/algashop-billing
 	url = https://github.com/efratec/algashop-billing.git
+[submodule "microservices/product-catalog"]
+	path = microservices/product-catalog
+	url = https://github.com/efratec/ems-product-catalog.git

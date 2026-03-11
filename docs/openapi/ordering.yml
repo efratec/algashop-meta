@@ -77,7 +77,7 @@ paths:
                   content:
                     type: array
                     items:
-                      $ref: "#/components/schemas/CustomerSummary"
+                      $ref: "#/components/schemas/OrderSummary"
   /api/v1/customers/{customerId}:
     get:
       parameters:
@@ -198,20 +198,20 @@ paths:
         - schema:
             type: string
             format: date
-            example: "2025-04-25"
+            example: "2024-04-25"
           in: query
           name: placedAtFrom
           required: false
         - schema:
             type: string
             format: date
-            example: "2025-01-01"
+            example: "2024-04-01"
           in: query
           name: placedAtTo
           required: false
         - schema:
             type: number
-            example: 1000.80
+            example: 1211.98
           in: query
           name: totalAmountFrom
           required: false
@@ -760,6 +760,10 @@ components:
           type: string
           example: "GATEWAY_BALANCE"
           nullable: false
+        creditCardId:
+          type: string
+          example: "28fcd9fb-4ce7-44d6-9583-14d8b3dc5aff"
+          nullable: true
         shipping:
           $ref: "#/components/schemas/ShippingInput"
         billing:
@@ -779,6 +783,10 @@ components:
           type: string
           example: "GATEWAY_BALANCE"
           nullable: false
+        creditCardId:
+          type: string
+          example: "28fcd9fb-4ce7-44d6-9583-14d8b3dc5aff"
+          nullable: true
         shipping:
           $ref: "#/components/schemas/ShippingInput"
         billing:
@@ -798,6 +806,7 @@ components:
         - items
         - shipping
         - billing
+        - creditCardId
       properties:
         id:
           type: string
@@ -830,6 +839,9 @@ components:
           $ref: "#/components/schemas/OrderStatus"
         paymentMethod:
           $ref: "#/components/schemas/PaymentMethod"
+        creditCardId:
+          type: string
+          example: "28fcd9fb-4ce7-44d6-9583-14d8b3dc5aff"
         shipping:
           $ref: "#/components/schemas/Shipping"
         billing:
@@ -912,6 +924,7 @@ components:
         - lastName
         - document
         - phone
+        - email
         - address
       properties:
         firstName:
@@ -929,6 +942,10 @@ components:
         phone:
           type: string
           example: "5511912341234"
+          nullable: false
+        email:
+          type: string
+          example: "johndoe@email.com"
           nullable: false
         address: 
           $ref: "#/components/schemas/Address"
@@ -979,9 +996,6 @@ components:
         phone:
           type: string
           example: "1191234564"
-        archived:
-          type: boolean
-          example: false
     OrderStatus:
       type: string
       example: "PLACED"
@@ -1024,19 +1038,19 @@ components:
         placedAt:
           type: string
           format: date-time
-          example: "2025-01-04T00:12:45Z"
+          example: "2024-04-04T00:12:45Z"
         canceledAt:
           type: string
           format: date-time
-          example: "2025-01-04T00:12:45Z"
+          example: "2024-04-04T00:12:45Z"
         paidAt:
           type: string
           format: date-time
-          example: "2025-01-04T00:12:45Z"
+          example: "2024-04-04T00:12:45Z"
         readyAt:
           type: string
           format: date-time
-          example: "2024-01-04T00:12:45Z"
+          example: "2024-04-04T00:12:45Z"
         status:
           $ref: "#/components/schemas/OrderStatus"
         paymentMethod:

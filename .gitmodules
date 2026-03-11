@@ -1,12 +1,20 @@
 [submodule "microservices/algashop-ordering"]
 	path = microservices/algashop-ordering
 	url = https://github.com/efratec/algashop-ordering.git
+	branch = main
 [submodule "docs/algashop-docs"]
 	path = docs/algashop-docs
 	url = https://github.com/efratec/algashop-docs.git
+	branch = main
 [submodule "microservices/algashop-billing"]
 	path = microservices/algashop-billing
 	url = https://github.com/efratec/algashop-billing.git
+	branch = main
 [submodule "microservices/product-catalog"]
 	path = microservices/product-catalog
 	url = https://github.com/efratec/ems-product-catalog.git
+	branch = main
+[submodule "template"]
+	path = template
+	url = https://github.com/efratec/algashop-template-inicial.git
+	branch = main

@@ -18,3 +18,7 @@
 	path = template
 	url = https://github.com/efratec/algashop-template-inicial.git
 	branch = main
+[submodule "microservices/billing-scheduler"]
+	path = microservices/billing-scheduler
+	url = https://github.com/efratec/algashop-billing-scheduler.git
+	branch = main
